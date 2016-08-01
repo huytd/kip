@@ -1,34 +1,38 @@
 # Kip
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/kip`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+Command Line Tool for Kipalog
 
 ## Installation
 
-Add this line to your application's Gemfile:
-
-```ruby
-gem 'kip'
-```
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
+Install this awesome gem with:
 
     $ gem install kip
 
+Don't forget add your personal Kipalog API key to `~/.bash_profile`:
+
+```bash
+export KIPALOG_API=<your-kipalog-api-key>
+```
+
 ## Usage
 
-TODO: Write usage instructions here
+```
+Commands:
+  kip help [COMMAND]                                  # Describe available commands or one specific command
+  kip post file.md -g, --tags=TAGS -t, --title=TITLE  # Post your markdown file to Kipalog
+```
 
-## Development
+For example:
 
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake test` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+```bash
+kip post an-awesome-post.md --title="This is an awesome post" --tags="golang,til,ruby,js"
+```
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+To post a markdown file in Draft mode, you can specific the `--publish` option as `false`:
+
+```bash
+kip post an-awesome-post.md --title="This is an awesome post" --tags="golang,til,ruby,js" --publish=false
+```
 
 ## Contributing
 
