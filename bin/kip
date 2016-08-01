@@ -1,0 +1,11 @@
+#!/usr/bin/env ruby
+
+require "kip"
+
+api_token = ENV["KIPALOG_API"]
+if api_token.nil? || api_token.empty?
+  puts "Missing Kipalog API Token.\nSetup your token in ~/.bash_profile:\n\n   export KIPALOG_API=your-api-token\n\n"
+else
+  Kip::CommandLine.start(ARGV)
+end
+
